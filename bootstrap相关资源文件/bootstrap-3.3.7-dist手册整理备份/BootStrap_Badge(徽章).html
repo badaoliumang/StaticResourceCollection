@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>徽章</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+     <pre>给链接、导航等元素嵌套 span class="badge" 元素，可以很醒目的展示新的或未读的信息条目。</pre>
+	 <br>
+	<a href="#">Inbox <span class="badge">42</span></a>
+    <br>
+	<button class="btn btn-primary" type="button">
+	  Messages <span class="badge">4</span>
+	</button>
+	<br>
+	<pre>如果没有新的或未读的信息条目，也就是说不包含任何内容，
+	徽章组件能够自动隐藏（通过CSS的 :empty 选择符实现) 。
+	徽章组件在 Internet Explorer 8 浏览器中不会自动消失，
+	因为 IE8 不支持 :empty 选择符。</pre>
+	<br>
+	<pre>适配导航元素的激活状态
+
+	Bootstrap 提供了内置的样式，让胶囊式导航内处于激活状态的
+	元素所包含的徽章展示相匹配的样式。</pre>
+	<br>
+		<ul class="nav nav-pills" role="tablist">
+		  <li role="presentation" class="active"><a href="#">Home <span class="badge">42</span></a></li>
+		  <li role="presentation"><a href="#">Profile</a></li>
+		  <li role="presentation"><a href="#">Messages <span class="badge">3</span></a></li>
+        </ul>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

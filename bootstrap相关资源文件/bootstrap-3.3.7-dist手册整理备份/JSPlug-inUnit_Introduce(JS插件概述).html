@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>JS插件概述</title>
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    单个还是全部引入:<br>
+     <pre>JavaScript插件可以单个引入（使用 Bootstrap 提供的单个 *.js 文件），
+      或者一次性全部引入（使用 bootstrap.js 或压缩版的 bootstrap.min.js）。    
+     </pre><br>
+    data属性：<br>
+        <pre>你可以仅仅通过 data 属性 API 就能使用所有的 Bootstrap 插件，无需写一行 JavaScript 代码。这是 Bootstrap 中的一等 API，也应该是你的首选方式。
+
+    话又说回来，在某些情况下可能需要将此功能关闭。因此，我们还提供了关闭 data 属性 API 的方法，即解除以 data-api 为命名空间并绑定在文档上的事件。就像下面这样：
+
+    Copy
+    $(document).off('.data-api')
+    另外，如果是针对某个特定的插件，只需在 data-api 前面添加那个插件的名称作为命名空间，如下：
+
+
+    $(document).off('.alert.data-api')</pre>
+<br>
+编程方式的API：<br>
+<pre>我们为所有 Bootstrap 插件提供了纯 JavaScript 方式的 API。所有公开的 API 都是支持单独或链式调用方式，并且返回其所操作的元素集合（注：和jQuery的调用形式一致）。</pre><br>
+$('.btn.danger').button('toggle').addClass('fat')<br>
+<pre>所有方法都可以接受一个可选的 option 对象作为参数，或者一个代表特定方法的字符串，或者什么也不提供（在这种情况下，插件将会以默认值初始化）：</pre><br>
+<pre>$('#myModal').modal()                      // 以默认值初始化
+$('#myModal').modal({ keyboard: false })   // initialized with no keyboard
+$('#myModal').modal('show')                // 初始化后立即调用 show 方法</pre><br>
+<pre>每个插件还通过 Constructor 属性暴露了其原始的构造函数：$.fn.popover.Constructor。如果你想获取某个插件的实例，可以直接通过页面元素获取：$('[rel="popover"]').data('popover')。</pre><br>
+避免命名空间冲突：<br>
+<pre>某些时候可能需要将 Bootstrap 插件与其他 UI 框架共同使用。在这种情况下，命名空间冲突随时可能发生。如果不幸发生了这种情况，你可以通过调用插件的 .noConflict 方法恢复其原始值。
+
+Copy
+var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Bootstrap functionality</pre><br>
+事件：<br>
+<pre>Bootstrap 为大部分插件所具有的动作提供了自定义事件。一般来说，这些事件都有不定式和过去式两种动词的命名形式，例如，不定式形式的动词（例如 show）表示其在事件开始时被触发；而过去式动词（例如 shown ）表示在动作执行完毕之后被触发。
+
+从 3.0.0 版本开始，所有 Bootstrap 事件的名称都采用命名空间方式。
+
+所有以不定式形式的动词命名的事件都提供了 preventDefault 功能。这就赋予你在动作开始执行前将其停止的能力。
+
+Copy
+$('#myModal').on('show.bs.modal', function (e) {
+  if (!data) return e.preventDefault() // 阻止模态框的展示
+})</pre><br>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

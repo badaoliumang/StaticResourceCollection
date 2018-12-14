@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Paging and flip(分页与翻页)</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   
+    <br/>
+	<hr>
+	分页（paging）：<br/>
+	<pre>
+	为您的网站或应用提供带有展示页码的分页组件，或者可以使用简单的翻页组件。
+	</pre>
+
+	<br/>
+	<hr>
+	默认分页：<br/>
+
+		<nav aria-label="Page navigation">
+		  <ul class="pagination">
+			<li>
+			  <a href="#" aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			  </a>
+			</li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li>
+			  <a href="#" aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			  </a>
+			</li>
+		  </ul>
+		</nav>
+       
+
+	   <br/>
+	   <pre>
+		　分析以上代码：
+
+			我们可以知道，实现分页我们通过 ul>li>a的结构来实现的，我们通过对ul添加class为pagination来实现的分页效果
+		  　通过ul>li>a>span来实现的上一页和下一页的功能
+			对于li元素：我们如果想显示当前的页码，通过对于相应的li元素上添加class为 active来实现的，
+			同样，如果我们想禁用特定的按钮，我们可以对相应的li元素上添加class为disabled类来实现的
+			在代码中的  aria-label的作用是进行说明的作用
+			对于nav元素：我们还需要在ul外面添加一个<nav>标签元素，里面的aria-label可以用来说明是哪儿的标签
+			对于ul元素：我们可以通过在ul元素上添加
+			.pagination-lg或者 .pagination-sm来实现分页栏的大小改变
+		</pre>
+    <br/>
+	<hr>
+	禁用和激活状态：<br/>
+	<pre>
+    链接在不同情况下可以定制。你可以给不能点击的链接添加 .disabled 类、给当前页添加 .active 类。
+	</pre>
+
+	<nav aria-label="...">
+	  <ul class="pagination">
+         <li class="disabled">
+		   <a href="#" aria-label="Previous">
+		     <span aria-hidden="true">&laquo;</span>
+		   </a>
+		 </li>
+		 <li class="active">
+            <a href="#">1
+				<span class="sr-only">
+				   (current)
+				</span>
+			</a>
+         </li>
+		  <li class="active">
+            <a href="#">2
+				<span class="sr-only">
+				   (current)
+				</span>
+			</a>
+         </li>
+          <li class="active">
+            <a href="#">3
+				<span class="sr-only">
+				   (current)
+				</span>
+			</a>
+         </li>
+	  </ul>
+	</nav>
+
+    <br/>
+	<hr>
+
+	<pre>
+	我们建议将 active 或 disabled 状态的链接（即a 标签）替换为 span 标签，或者在向前/向后的箭头处省略a 标签，这样就可以让其保持需要的样式而不能被点击。
+	</pre>
+
+	<nav aria-label="...">
+		  <ul class="pagination">
+			<li class="disabled">
+			  <span>
+				<span aria-hidden="true">&laquo;</span>
+			  </span>
+			</li>
+			<li class="active">
+			  <span>1 <span class="sr-only">(current)</span></span>
+			</li>
+			...
+		  </ul>
+    </nav>
+
+
+	
+    <br/>
+	<hr>
+	尺寸：<br/>
+    <pre>
+	 想要更小或更大的分页？.pagination-lg 或 .pagination-sm 类提供了额外可供选择的尺寸。
+	</pre>
+		 <nav aria-label="..."><ul class="pagination pagination-lg">...</ul>
+		 </nav>
+
+		<nav aria-label="..."><ul class="pagination">...</ul>
+		</nav>
+
+		<nav aria-label="..."><ul class="pagination pagination-sm">...</ul>
+		</nav>
+
+    <br/>
+	<hr>
+	翻页：<br/>
+    <pre>用简单的标记和样式，就能做个上一页和下一页的简单翻页。用在像博客和杂志这样的简单站点上
+	在默认的翻页中，链接居中对齐。
+	</pre>
+
+		<nav aria-label="...">
+		  <ul class="pager">
+			<li><a href="#">Previous</a></li>
+			<li><a href="#">Next</a></li>
+		  </ul>
+        </nav>
+    <hr><br>
+	<pre>对齐链接
+    你还可以把链接向两端对齐：</pre>
+		<nav aria-label="...">
+		  <ul class="pager">
+			<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+			<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+		  </ul>
+		</nav>
+
+		<br><hr>
+     <pre>可选的禁用状态
+     .disabled 类也可用于翻页中的链接。</pre>
+		 <nav aria-label="...">
+		  <ul class="pager">
+			<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+			<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+		  </ul>
+		 </nav>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    默认样式的导航条：<br/>
+	<!-- 导航条是在您的应用或网站中作为导航页头的响应式基础组件。它们在移动设备上可以折叠（并且可开可关），且在视口（viewport）宽度增加时逐渐变为水平展开模式。
+	-->
+
+		<!-- 导航条内所包含元素溢出
+	由于 Bootstrap 并不知道你在导航条内放置的元素需要占据多宽的空间，你可能会遇到导航条中的内容折行的情况（也就是导航条占据两行）。解决办法如下：
+
+	减少导航条内所有元素所占据的宽度。
+	在某些尺寸的屏幕上（利用 响应式工具类）隐藏导航条内的一些元素。
+	修改导航条在水平排列和折叠排列互相转化时，触发这个转化的最小屏幕宽度值。可以通过修改 @grid-float-breakpoint 变量实现，或者自己重写相关的媒体查询代码，覆盖 Bootstrap 的默认值。
+	依赖 JavaScript 插件
+	如果 JavaScript 被禁用，并且视口（viewport）足够窄，致使导航条折叠起来，导航条将不能被打开，.navbar-collapse 内所包含的内容也将不可见。
+
+	响应式导航条依赖 collapse 插件，定制 Bootstrap 的话时候必将其包含。
+	修改视口的阈值，从而影响导航条的排列模式
+	当浏览器视口（viewport）的宽度小于 @grid-float-breakpoint 值时，导航条内部的元素变为折叠排列，也就是变现为移动设备展现模式；当浏览器视口（viewport）的宽度大于 @grid-float-breakpoint 值时，导航条内部的元素变为水平排列，也就是变现为非移动设备展现模式。通过调整源码中的这个值，就可以控制导航条何时堆叠排列，何时水平排列。默认值是 768px （小屏幕 -- 或者说是平板 --的最小值，或者说是平板）。
+	导航条的可访问性
+	务必使用 <nav> 元素，或者，如果使用的是通用的 <div> 元素的话，务必为导航条设置 role="navigation" 属性，这样能够让使用辅助设备的用户明确知道这是一个导航区域。
+	-->
+
+
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+     <!-- .container 类用于固定宽度并支持响应式布局的容器。
+
+     .container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。
+	 -->
+   
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+		<!-- <span class=“sr-only”></span>就是保证屏幕阅读器正确读取且不会影响Ui的视觉呈现。 -->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+    <br/>
+	<hr>
+	品牌图标：<br/>
+	<!-- 将导航条内放置品牌标志的地方替换为 <img> 元素即可展示自己的品牌图标。由于 .navbar-brand 已经被设置了内补（padding）和高度（height），你需要根据自己的情况添加一些 CSS 代码从而覆盖默认设置。 -->
+     
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+         <div class="navbar-header">
+		    <a class="navbar-brand" href="#">
+               <img alt="Brand" height="100%" src="images/brand.PNG">
+            </a>
+			</div>
+		 </div>
+	  </div>
+	</nav>
+
+	<br/>
+	<hr>
+
+	表单：<br/>
+    <!-- 
+	将表单放置于 .navbar-form 之内可以呈现很好的垂直对齐，并在较窄的视口（viewport）中呈现折叠状态。 使用对齐选项可以规定其在导航条上出现的位置。
+
+	注意，.navbar-form 和 .form-inline 的大部分代码都一样，内部实现使用了 mixin。 某些表单组件，例如输入框组，可能需要设置一个固定宽度，从而在导航条内有合适的展现。
+	-->
+
+	<form class="navbar-form navbar-left" role="search">
+	   <div class="form-group">
+	      <input type="text" class="form-control" placeholder="Search">
+	   </div>
+	   <button type="submit" class="btn btn-default">Submit
+	   </button>
+	</form>
+
+	<br/>
+	<hr>
+	按钮：<br/>
+    <!-- 对于不包含在 <form> 中的 <button> 元素，加上 .navbar-btn 后，可以让它在导航条里垂直居中。有一些对于为辅助设备提供可识别标签的方法，例如， aria-label、aria-labelledby 或者 title 属性。如果这些方法都没有，屏幕阅读器将使用 placeholder 属性（如果这个属性存在的话），但是请注意，使用 placeholder 代替其他识别标签的方式是不推荐的。 
+	-->
+	<!-- 基于情境的用法
+	就像标准的 按钮类 一样，.navbar-btn 可以被用在 <a> 和 <input> 元素上。然而，在 .navbar-nav 内，.navbar-btn 和标准的按钮类都不应该被用在 <a> 元素上。 -->
+    <button type="button" class="btn btn-default navbar-btn">
+	Sign in 
+	</button>
+    <br/>
+	<hr>
+	文本：<br/>
+
+    <!-- 把文本包裹在 .navbar-text中时，为了有正确的行距和颜色，通常使用 <p> 标签。 
+	-->
+
+    <p class="navbar-text">Signed in as Mark Otto</p>
+
+    <br/>
+	<hr>
+	非导航的链接：<br/>
+    <!-- 或许你希望在标准的导航组件之外添加标准链接，那么，使用 .navbar-link 类可以让链接有正确的默认颜色和反色设置。
+    -->
+	<p class="navbar-text  navbar-right">Signed in as
+	<a href="#" class="navbar-link">
+	    Mark Otto
+	</a>
+	</p>
+
+	<br/>
+	<hr>
+	组件排列：<br/>
+    <!-- 通过添加 .navbar-left 和 .navbar-right 工具类让导航链接、表单、按钮或文本对齐。两个类都会通过 CSS 设置特定方向的浮动样式。例如，要对齐导航链接，就要把它们放在个分开的、应用了工具类的 <ul> 标签里。
+
+	这些类是 .pull-left 和 .pull-right 的 mixin 版本，但是他们被限定在了媒体查询（media query）中，这样可以更容易的在各种尺寸的屏幕上处理导航条组件。
+	向右侧对齐多个组件
+	导航条目前不支持多个 .navbar-right 类。为了让内容之间有合适的空隙，我们为最后一个 .navbar-right 元素使用负边距（margin）。如果有多个元素使用这个类，它们的边距（margin）将不能按照你的预期正常展现。
+	-->
+    
+    <br/>
+	<hr>
+	固定在顶部：<br/>
+    <!-- 添加 .navbar-fixed-top 类可以让导航条固定在顶部，还可包含一个 .container 或 .container-fluid 容器，从而让导航条居中，并在两侧添加内补（padding）。
+	-->
+    需要为 body 元素设置内补（padding）
+	<!-- 这个固定的导航条会遮住页面上的其它内容，除非你给 <body> 元素底部设置了 padding。用你自己的值，或用下面给出的代码都可以。提示：导航条的默认高度是 50px。
+	body { padding-bottom: 70px; }
+     -->    
+    <nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+		...
+	  </div>
+    </nav>
+
+
+
+	<br/>
+	<hr>
+	静止在顶部：<br/>
+	<!-- 通过添加 .navbar-static-top 类即可创建一个与页面等宽度的导航条，它会随着页面向下滚动而消失。还可以包含一个 .container 或 .container-fluid 容器，用于将导航条居中对齐并在两侧添加内补（padding）。
+
+	与 .navbar-fixed-* 类不同的是，你不用给 body 添加任何内补（padding）。
+	-->
+	<nav class="navbar navbar-default navbar-static-top">
+	  <div class="container">
+		...
+	  </div>
+    </nav>
+
+
+	<br/>
+	<hr>
+	反色的导航条：<br/>
+	<!-- 
+	通过添加 .navbar-inverse 类可以改变导航条的外观。
+	-->
+	<nav class="navbar navbar-inverse">
+	  ...
+	</nav>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

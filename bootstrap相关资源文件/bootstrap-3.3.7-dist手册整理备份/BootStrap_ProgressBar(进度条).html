@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>ProgressBar(进度条)</title>
+ 
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    通过这些简单、灵活的进度条，为当前工作流程或动作提供实时反馈。<br>
+	<pre>跨浏览器兼容性
+	进度条组件使用了 CSS3 的 transition 和 animation 属性来完成一些特效。这些特性在 Internet Explorer 9 或以下版本中、Firefox 的老版本中没有被支持。Opera 12 不支持 animation 属性。</pre>
+	<br>
+	默认样式的进度条:<br>
+     <div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+			<span class="sr-only">60% Complete</span>
+			<!-- .sr-only是 除了屏幕阅读器外，其他设备上隐藏该元素，这个是用于帮助残障人士阅读的。 -->
+		  </div>
+     </div>
+     <br>
+		<pre>
+		
+		role属性作用：告诉搜索引擎这个div的作用是进度条；
+		aria-valuenow=”30”属性作用：当前进度条的进度为30%；
+		aria-valuemin=”0”属性作用：进度条的最小值为0%；
+		aria-valuemax=”100”属性作用：进度条的最大值为100%；
+		可以将设置了.sr-only类的span标签从进度条组件中移除，而让当前进度显示出来；
+        </pre>	
+		<br> 
+     带有提示标签的进度条:<br>
+     <pre>将设置了 .sr-only 类的 span 标签从进度条组件中移除 类，从而让当前进度显示出来。</pre>
+	    <div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+			60%
+		  </div>
+		</div>
+     <br>
+	 <hr>
+	 <pre>在展示很低的百分比时，如果需要让文本提示能够清晰可见，
+	 可以为进度条设置 min-width 属性。</pre>
+	 <br>
+       <div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+			0%
+		  </div>
+		</div>
+		<div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 2%;">
+			2%
+		  </div>
+		</div>
+		<br>
+		<pre>相对的计算必然会一个参考物，那么这里相对所指的是相对于元素父元素的
+		font-size。比如说：如果在一个div设置字体大小为“16px”，此时这个div的后代
+		元素教程了是将继承他的字体大小，除非重新在其后代元素中进行过显示的设置。
+		此时，如果你将其子元素的字体大小设置为“0.75em”，那么其字体大小计算出来
+		后就相当于“0.75 X 16px = 12px”；</pre>
+		
+        <br>
+
+     根据情境变化效果:<br>
+     进度条组件使用与按钮和警告框相同的类，根据不同情境展现相应的效果<br>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+			<span class="sr-only">40% Complete (success)</span>
+		  </div>
+		</div>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+			<span class="sr-only">20% Complete</span>
+		  </div>
+		</div>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+			<span class="sr-only">60% Complete (warning)</span>
+		  </div>
+		</div>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+			<span class="sr-only">80% Complete (danger)</span>
+		  </div>
+		</div>
+		<br>
+     条纹效果：<br>
+     通过渐变可以为进度条创建条纹效果，IE9 及更低版本不支持。<br>
+     
+		<div class="progress">
+		  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+			<span class="sr-only">40% Complete (success)</span>
+		  </div>
+		</div>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+			<span class="sr-only">20% Complete</span>
+		  </div>
+		</div>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+			<span class="sr-only">60% Complete (warning)</span>
+		  </div>
+		</div>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+			<span class="sr-only">80% Complete (danger)</span>
+		  </div>
+		</div>
+     <br>
+	 动画效果：<br>
+     <pre>为 .progress-bar-striped 添加 .active 类，使其呈现出由右向左
+	 运动的动画效果。IE9 及更低版本的浏览器不支持。</pre>
+	 <br>
+
+     
+     <div class="progress">
+		  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+			<span class="sr-only">45% Complete</span>
+		  </div>
+	 </div>
+	 <br>
+	 <hr>
+	 堆叠效果：<br>
+     把多个进度条放入同一个 .progress 中，使它们呈现堆叠的效果。<br>
+     <div class="progress">
+	  <div class="progress-bar progress-bar-success" style="width: 35%">
+		<span class="sr-only">35% Complete (success)</span>
+	  </div>
+	  <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+		<span class="sr-only">20% Complete (warning)</span>
+	  </div>
+	  <div class="progress-bar progress-bar-danger" style="width: 10%">
+		<span class="sr-only">10% Complete (danger)</span>
+	  </div>
+	</div>
+	<br>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

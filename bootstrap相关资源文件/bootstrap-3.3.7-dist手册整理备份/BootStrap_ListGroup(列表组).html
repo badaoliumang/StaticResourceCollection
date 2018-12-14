@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>ListGroup 列表组</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	 <pre>列表组是灵活又强大的组件，不仅能用于显示一组简单的元素，还能用于复杂的定制的内容</pre>
+	 <br>
+	 <pre>最简单的列表组仅仅是一个带有多个列表条目的无序列表，另外还需要设置适当的类。我们提供了一些预定义的样式，你可以根据自身的需求通过 CSS 自己定制。</pre>
+	 <br>
+	 <ul class="list-group">
+		<li class="list-group-item">aaaaaaaaaaaaaaa</li>
+        <li class="list-group-item">bbbbbbbbbbbbbbb</li>
+		<li class="list-group-item">ccccccccccccccc</li>
+        <li class="list-group-item">ddddddddddddddd</li>
+		<li class="list-group-item">eeeeeeeeeeeeeee</li>
+        <li class="list-group-item">ffffffffffffffff</li>
+	 </ul>
+    <br>
+	徽章：<br>
+	给列表组加入徽章组件，它会自动被放在右边。<br>
+		<ul class="list-group">
+		  <li class="list-group-item">
+			<span class="badge">14</span>
+			Cras justo odio
+		  </li>
+        </ul>
+	<br>
+	链接：<br>
+	<pre>用 a 标签代替 li 标签可以组成一个全部是链接的列表组（还要注意的是，我们需要将 ul 标签替换为 div 标签）。没必要给列表组中的每个元素都加一个父元素。</pre><br>
+
+	 <div class="list-group">
+		<a class="list-group-item-active" href="#">aaaaaa</a>
+        <a class="list-group-item" href="#">bbbbb</a>
+		<a class="list-group-item" href="#">ccccc</a>
+		<a class="list-group-item" href="#">ddddd</a>
+		<a class="list-group-item" href="#">eeeee</a>
+	 </div>
+	 <br>
+
+	 按钮：<br>
+	 <pre>列表组中的元素也可以直接就是按钮（也同时意味着父元素必须是 div 而不能用 ul 了），并且无需为每个按钮单独包裹一个父元素。注意不要使用标准的 .btn 类！</pre><br>
+
+	 <div class="list-group">
+          <button type="button" class="list-group-item">aaa</button>            
+          <button type="button" class="list-group-item">bbb</button>          
+          <button type="button" class="list-group-item">ccc</button>          
+          <button type="button" class="list-group-item">ddd</button>          
+          <button type="button" class="list-group-item">eee</button>                    
+	 </div>
+
+    <br>
+    被禁用的条目：<br>
+    <pre>为 .list-group-item 添加 .disabled 类可以让单个条目显示为灰色        ，表现出被禁用的效果。
+    </pre><br>
+    <div class="list-group">
+      <a href="#" class="list-group-item disabled">
+        Cras justo odio
+      </a>
+      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+      <a href="#" class="list-group-item">Morbi leo risus</a>
+      <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+      <a href="#" class="list-group-item">Vestibulum at eros</a>
+    </div>
+    <br>
+    情境类：<br>
+    <pre>为列表中的条目添加情境类，默认样式或链接列表都可以。还可以为          列表中的条目设置 .active 状态。
+    </pre><br>
+    
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+          <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+          <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+          <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
+        </ul>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+          <a href="#" class="list-group-item list-group-item-info">Cras sit amet nibh libero</a>
+          <a href="#" class="list-group-item list-group-item-warning">Porta ac consectetur ac</a>
+          <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+        </div>
+
+    <br>
+    定制内容：<br>
+    <pre>列表组中的每个元素都可以是任何 HTML 内容，甚至是像下面的带链接的列表组。
+    </pre><br>
+
+    <div class="list-group">
+      <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">List group item heading</h4>
+        <p class="list-group-item-text">aaaaaaaaaaaaaaa</p>
+      </a>
+     <a href="#" class="list-group-item ">
+        <h4 class="list-group-item-heading">List group item heading</h4>
+        <p class="list-group-item-text">bbbbbbbbbbbbbbb</p>
+      </a>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

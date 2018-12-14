@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。 -->
+		<!-- 简介
+	栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。下面就介绍一下 Bootstrap 栅格系统的工作原理：
+
+	“行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。
+	通过“行（row）”在水平方向创建一组“列（column）”。
+	你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为行（row）”的直接子元素。
+	类似 .row 和 .col-xs-4 这种预定义的类，可以用来快速创建栅格布局。Bootstrap 源码中定义的 mixin 也可以用来创建语义化的布局。
+	通过为“列（column）”设置 padding 属性，从而创建列与列之间的间隔（gutter）。通过为 .row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding，也就间接为“行（row）”所包含的“列（column）”抵消掉了padding。
+	负值的 margin就是下面的示例为什么是向外突出的原因。在栅格列中的内容排成一行。
+	栅格系统中的列是通过指定1到12的值来表示其跨越的范围。例如，三个等宽的列可以使用三个 .col-xs-4 来创建。
+	如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。
+	栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-md-* 栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-lg-* 不存在， 也影响大屏幕设备。
+	通过研究后面的实例，可以将这些原理应用到你的代码中。 -->
+
+
+    <!-- 使用单一的一组 .col-md-* 栅格类，就可以创建一个基本的栅格系统，在手机和平板设备上一开始是堆叠在一起的（超小屏幕到小屏幕这一范围），在桌面（中等）屏幕设备上变为水平排列。所有“列（column）必须放在 ” .row 内。 -->
+    <hr>
+	<div class="row">
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	</div>
+
+	<div class="row">
+	  <div class="col-md-8">.col-md-8</div>
+	  <div class="col-md-4">.col-md-4</div>
+	</div>
+
+
+	<div class="row">
+	  <div class="col-md-4">.col-md-4</div>
+	  <div class="col-md-4">.col-md-4</div>
+	  <div class="col-md-4">.col-md-4</div>
+	</div>
+
+
+	<div class="row">
+	  <div class="col-md-6">.col-md-6</div>
+	  <div class="col-md-6">.col-md-6</div>
+	</div>
+
+	<hr>
+	<!--流式布局容器：
+	将最外面的布局元素 .container 修改为 .container-fluid，就可以将固定宽度的栅格布局转换为 100% 宽度的布局。
+	-->
+	<br/>
+	<div class="container-fluid">
+	   <div class="row">
+	   ..............
+	   </div>
+	</div>
+
+	<hr>
+	<!--响应式列重置：
+	  在某些阈值时，某些列可能会出现比别的列高的情况。为了克服这一问题，建议联合使用 .clearfix 和 响应式工具类。	
+	-->
+
+    <div class="row">
+	   <div class="col-xs-6  col-sm-3">
+	   .col-xs-6 .col-sm-3
+	   </div> 
+	   <div class="col-xs-6  col-sm-3">
+	   .col-xs-6 .col-sm-3
+	   </div> 
+
+	   <div class="clearfix visible-block"></div>
+
+
+	   <div class="col-xs-6  col-sm-3">
+	   .col-xs-6 .col-sm-3
+	   </div> 
+	   <div class="col-xs-6  col-sm-3">
+	   .col-xs-6 .col-sm-3
+	   </div> 
+	</div>
+
+
+
+    <!--
+	列偏移：
+	使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素增加了左侧的边距（margin）。例如，.col-md-offset-4 类将 .col-md-4 元素向右侧偏移了4个列（column）的宽度。
+	--->
+
+
+	<div class="row">
+         <div class="col-md-4">.col-md-4</div>
+		 <div class="col-md-4 col-md-offset-4">
+		 .col-md-4 .col-md-offset-4
+		 </div>
+
+	</div>
+	<hr>
+	<div class="row">
+		  <div class="col-xs-6 col-sm-4">
+		  col-xs-6 col-sm-4
+		  </div>
+		  <div class="col-xs-6 col-sm-4">
+		  col-xs-6 col-sm-4
+		  </div>
+		  <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0">
+		  col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0
+		  </div>
+    </div>
+
+
+	<!--
+	嵌套列：
+
+	为了使用内置的栅格系统将内容再次嵌套，可以通过添加一个新的 .row 元素和一系列 .col-sm-* 元素到已经存在的 .col-sm-* 元素内。被嵌套的行（row）所包含的列（column）的个数不能超过12（其实，没有要求你必须占满12列）。
+	-->
+    <hr>
+    <div class="row">
+	  <div class="col-sm-9">
+	    Level 1:col-sm-9
+		<div class="row">
+		   <div class="col-xs-8 col-sm-6">
+		     Level 2: .col-xs-8 .col-sm-6
+		   </div>
+		   <div class="col-xs-4 col-sm-6">
+		     Level 2: .col-xs-4 .col-sm-6
+		   </div>
+		</div>
+	  </div>
+	</div>
+	<br/>
+	<hr>
+	<!--
+	列排序：
+	通过使用 .col-md-push-* 和 .col-md-pull-* 类就可以很容易的改变列（column）的顺序。	
+	-->
+    
+	<div class="row">
+	  <div class="col-md-9 col-md-push-3">.col-md-9  .col-md-push-3
+	  </div>
+	  <div class="col-md-3 col-md-pull-9">
+	  .col-md-3  .col-md-pull-9
+	  </div>
+	</div>
+
+    <!-- jQuery 
+	(necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

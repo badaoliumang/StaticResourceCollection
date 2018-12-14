@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- 
+	Bootstrap 中的导航组件都依赖同一个 .nav 类，状态类也是共用的。改变修饰类可以改变样式。
+		在标签页上使用导航需要依赖 JavaScript 标签页插件
+	由于标签页需要控制内容区的展示，因此，你必须使用 标签页组件的 JavaScript 插件。另外还要添加 role 和 ARIA 属性 – 详细信息请参考该插件的 实例。
+	确保导航组件的可访问性
+	如果你在使用导航组件实现导航条功能，务必在 <ul> 的最外侧的逻辑父元素上添加 role="navigation" 属性，或者用一个 <nav> 元素包裹整个导航组件。不要将 role 属性添加到 <ul> 上，因为这样可以被辅助设备（残疾人用的）上被识别为一个真正的列表。 -->
+      
+
+
+    <!-- 注意 .nav-tabs 类依赖 .nav 基类。 -->
+	标签页：<br/>
+	  <ul class="nav nav-tabs">
+	     <li role="presentation" class="active">
+		   <a href="#">Home</a>
+		 </li>
+		 <li role="presentation">
+		   <a href="#">ProFfile</a>
+		 </li>
+		 <li role="presentation">
+		   <a href="#">Message</a>
+		 </li>
+	  </ul>
+
+	  <br/>
+	  <hr>
+	  胶囊式标签页：<br/>
+    <!-- HTML 标记相同，但使用 .nav-pills 类.
+     
+	pill:胶囊
+
+	赋予active类使其处于默认状态，当点击其他时移除active类并赋予当前。
+
+	<li role="presentation">
+	这里是无障碍网页应用的属性，方便一些视力障碍的人士的使用
+	-->
+      <ul class="nav nav-pills">
+	    <li role="presentation" class="active">
+		<a href="#">Home</a>
+		</li>
+		<li role="presentation">
+		<a href="#">Profile</a>
+		</li>
+		<li role="presentation">
+		<a href="#">Message</a>
+		</li>
+	  </ul>
+	  <br/>
+	  <hr>
+
+    <!-- 胶囊是标签页也是可以垂直方向堆叠排列的。只需添加 .nav-stacked 类。
+	stacked:堆叠的
+	-->
+     
+
+	   <ul class="nav nav-pills nav-stacked">
+	    <li role="presentation" class="active">
+		<a href="#">Home</a>
+		</li>
+		<li role="presentation">
+		<a href="#">Profile</a>
+		</li>
+		<li role="presentation">
+		<a href="#">Message</a>
+		</li>
+	  </ul>
+	  <br/>
+	  <hr>
+	  两端对齐的标签页：<br/>
+	  <!-- 在大于 768px 的屏幕上，通过 .nav-justified 类可以很容易的让标签页或胶囊式标签呈现出同等宽度。在小屏幕上，导航链接呈现堆叠样式。
+	  justified:两端对齐的
+
+	  -->
+      <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" class="active">
+		<a href="#">Home</a>
+		</li>
+		<li role="presentation">
+		<a href="#">Profile</a>
+		</li>
+		<li role="presentation">
+		<a href="#">Message</a>
+		</li>
+	  </ul>
+
+	   <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" class="active">
+		<a href="#">Home</a>
+		</li>
+		<li role="presentation">
+		<a href="#">Profile</a>
+		</li>
+		<li role="presentation">
+		<a href="#">Message</a>
+		</li>
+	  </ul>
+      <br/>
+	  <hr>
+    禁用的链接：<br/>
+    <!-- 对任何导航组件（标签页、胶囊式标签页），都可以添加 .disabled 类，从而实现链接为灰色且没有鼠标悬停效果。
+
+    链接功能不受到影响
+	这个类只改变 <a> 的外观，不改变功能。可以自己写 JavaScript 禁用这里的链接。
+	-->
+  
+	<ul class="nav nav-tabs">
+		 <li role="presentation" class="active">
+		   <a href="#">Home</a>
+		 </li>
+		 <li role="presentation" class="disabled">
+		   <a href="#">ProFfile</a>
+		 </li>
+		 <li role="presentation">
+		   <a href="#">Message</a>
+		 </li>
+	</ul>
+
+	  <br/>
+	  <hr>
+
+	添加下拉菜单：<br/>
+    <!-- 用一点点额外 HTML 代码并加入下拉菜单插件的 JavaScript 插件即可。 -->
+
+    <ul class="nav nav-tabs">
+	     <li role="presentation" class="active">
+		   <a href="#">Home</a>
+		 </li>
+
+		 <li role="presentation">
+		   <a href="#">ProFfile</a>
+		 </li>
+
+		 <li role="presentation" class="dropdown">
+		   <a class="dropdown-toggle" data-toggle="dropdown"
+		   href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Dropdown<span class="caret"></span>
+				  <ul class="dropdown-menu">
+				    <li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+		   </a>
+		 </li>
+	</ul>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

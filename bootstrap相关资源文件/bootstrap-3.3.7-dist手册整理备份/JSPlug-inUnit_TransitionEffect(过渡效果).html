@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>过渡效果</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+关于过渡效果：<br>
+<pre>对于简单的过渡效果，只需将 transition.js 和其它 JS 文件一起引入即可。如果你使用的是编译（或压缩）版的 bootstrap.js 文件，就无需再单独将其引入了。
+</pre><br>
+包含的内容：<br>
+<pre>Transition.js 是针对 transitionEnd 事件的一个基本辅助工具，也是对 CSS 过渡效果的模拟。它被其它插件用来检测当前浏览器对是否支持 CSS 的过渡效果。</pre><br>
+禁用过渡效果：<br>
+<pre>通过下面的 JavaScript 代码可以在全局范围禁用过渡效果，并且必须将此代码放在 transition.js （或 bootstrap.js 或 bootstrap.min.js）后面，确保在 js 文件加载完毕后再执行下面的代码：
+
+
+$.support.transition = false</pre><br>
+<pre>Bootstrap默认给各组件提供了基本的动画过渡效果，值得注意的是，Bootstrap使用的动画过渡效果全部使用了CSS3的语法，所以IE6、IE7、IE8是不能用动画过渡效果了。
+默认情况下，以下组件使用了动画过渡效果：
+1、模态弹窗（Modal）的滑动和渐变效果；
+2、选项卡（Tab）的渐变效果；
+3、警告框（Alert）的渐变效果；
+4、旋转轮播（Carousel）的滑动效果。
+
+动画过渡效果不是标准的插件，而是一个判断动画的工具方法，所以没有遵守JavaScript插件的标准开发步骤。</pre><br>
+<pre>bootstrap插件自带的动画都是用CSS3的过渡实现的，transition动画相比jQuery自带的动画有许多优点，这些动画比较平滑，使用起来比较方便和灵活，并且对资源的消耗比较少，但是也有缺点，比如动画完成时间等等。既然bootstrap插件采用了transition来进行动画效果修改，那么这样的方法还是很值得去学习一下的。</pre><br>
+
+
+CSS transition：<br>
+<pre>
+CSS transition是CSS样式在一定时间内从一个状态平滑地过渡到另外一个状态，我们可以使用伪类来很容易地实现这样的CSS transition。
+
+.testRect {
+  height: 200px;
+  width: 200px;
+  background-color: #444;
+  transition: background-color 1s linear; 
+}
+
+.testRect:hover {
+  background-color: #36f;
+}</pre><br>
+
+
+<pre>上面的代码可以让一个类为testRect的元素的背景色在鼠标移动到该元素上1s内按照线性变化从灰色变成蓝色。</pre><br>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

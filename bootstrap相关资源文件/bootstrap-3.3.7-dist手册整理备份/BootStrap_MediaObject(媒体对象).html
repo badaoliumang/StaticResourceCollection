@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>MediaObject 媒体对象</title>
+       <pre>
+	 这是一个抽象的样式，用以构建不同类型的组件，这些组件都具有在文本内容的左或右侧对齐的图片（就像博客评论或 Twitter 消息)
+	 </pre><br>
+
+      默认样式：<br>
+      <pre>默认样式的媒体对象组件允许在一个内容块的左边或右边展示一个多媒体内容（图像、视频、音频）。</pre><br>
+	    <div class="media">
+		  <div class="media-left">
+			<a href="#">
+			  <img class="media-object" src="..." alt="...">
+			</a>
+		  </div>
+		  <div class="media-body">
+			<h4 class="media-heading">Media heading</h4>
+			这是一个media
+		  </div>
+		</div>
+		<br>
+		对齐：<br>
+		<hr>
+		<pre>图片或其他媒体类型可以顶部、中部或底部对齐。
+		默认是顶部对齐。</pre><br>
+	  <div class="media">
+		  <div class="media-left media-middle">
+		  <!-- 左右居左，上下居中 -->
+			<a href="#">
+			  <img class="media-object" src="..." alt="...">
+			</a>
+		  </div>
+		  <div class="media-body">
+			<h4 class="media-heading">Middle aligned media</h4>
+			...
+		  </div>
+       </div>
+	   <br>
+	   媒体对象列表：<br>
+	   <pre>用一点点额外的标记，就能在列表内使用媒体对象组件（对评论或文章列表很有用）。</pre>
+	   <br>
+	    <ul class="media-list">
+		  <li class="media">
+			<div class="media-left">
+			  <a href="#">
+				<img class="media-object" src="..." alt="...">
+			  </a>
+			</div>
+			<div class="media-body">
+			  <h4 class="media-heading">Media heading</h4>
+			  ...
+			</div>
+		  </li>
+		  <li class="media">
+			<div class="media-left">
+			  <a href="#">
+				<img class="media-object" src="..." alt="...">
+			  </a>
+			</div>
+			<div class="media-body">
+			  <h4 class="media-heading">Media heading</h4>
+			  ...
+			</div>
+		  </li>
+		  <li class="media">
+			<div class="media-left">
+			  <a href="#">
+				<img class="media-object" src="..." alt="...">
+			  </a>
+			</div>
+			<div class="media-body">
+			  <h4 class="media-heading">Media heading</h4>
+			  ...
+			</div>
+		  </li>
+		</ul>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
